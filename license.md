@@ -10,7 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 -------------
 
-files under src/fuctions/mathfun originally written by Julien Pommier, slightly modified for including into this repo
+files under src/fuctions/mathfun originally written by Julien Pommier, slightly modified for including into this repo (changed the functions parameters and set inline to forced inline define ) 
 
 Copyright (C) 2007  Julien Pommier
 Copyright (C) 2011  Julien Pommier
