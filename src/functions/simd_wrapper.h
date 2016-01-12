@@ -1,30 +1,4 @@
-/*
-  MEMO OF SIMD FUNCTIONS
- 
- - set to zero
-	SSE: _mm_setzero_ps()                   NEON: vdupq_n_f32(0)
- 
- - set1 scalar
-	SSE: _mm_set1_ps(float s)               NEON: vdupq_n_f32(float s)
- 
- - load pointer
-	SSE: _mm_load_ps(float* p);             NEON: vld1q_f32(float* p);
-	SSE: _mm_loadu_ps(float* p);
- 
- - store data
-	SSE: _mm_store_ps(float* p, f128 a);	NEON: vst1q_f32(float* p, f128 a);
-	SSE: _mm_storeu_ps(float* p, f128 a);
- 
- - convert float to int (and truncate)
-	SSE: _mm_cvttps_epi32(f128 a);          NEON: vcvtq_s32_f32( f128 a );
- 
- - convert int to float
-	SSE: _mm_cvtepi32_ps( i128 a);          NEON: vcvtq_f32_s32( i128 a );
- 
- - integer binary shift
-	SSE: _mm_sll_epi32(i128 a, i128 shift)	NEON: vshlq_s32(i128 a, i128 shift);
 
-*/
 
 #ifndef OFX_SIMDFLOATS_SIMD_WRAPPER_H_INCLUDED
 #define OFX_SIMDFLOATS_SIMD_WRAPPER_H_INCLUDED
