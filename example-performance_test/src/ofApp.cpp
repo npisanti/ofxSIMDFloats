@@ -1,8 +1,10 @@
 #include "ofApp.h"
 
+
 // This is a simple performance test of ofxSIMDFloats
 // if possible make better tests on cpu load while running your app
 // run this tests with -O2 or -O3 optimization activated
+
 
 //--------------------------------------------------------------
 void ofApp::setup(){
