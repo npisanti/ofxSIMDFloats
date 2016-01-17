@@ -37,25 +37,4 @@
 #endif
 
 
-#ifndef NOEXCEPT 
-    #ifndef _MSC_VER
-    #define NOEXCEPT noexcept
-    #else
-    #define NOEXCEPT
-    #endif
-#endif
-
-#ifndef M_TAU
-    #define M_TAU 6.28318530717958647692528
-#endif
-
-#ifndef M_TAU_DOUBLE
-    #define M_TAU_DOUBLE 6.283185307179586476925286766559005768L
-#endif
-
-#ifndef M_PI_DOUBLE
-    #define M_PI_DOUBLE 3.141592653589793238462643383279502884L
-#endif
-
-
 #endif  // OFX_SIMDFLOATS_INLINES_H_INCLUDED
