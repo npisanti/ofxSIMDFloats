@@ -44,7 +44,12 @@
 #include "../simd_wrapper.h"
 
 namespace ofx {
-    
+
+#ifdef _MSC_VER
+	#pragma warning( push )
+	#pragma warning( disable : 4838)
+	#pragma warning( disable : 4305)
+#endif       
     /* yes I know, the top of this file is quite ugly */
     
 #ifdef _MSC_VER /* visual c++ */
@@ -580,9 +585,11 @@ static const ALIGN16_BEG Type _ps_##Name[4] ALIGN16_END = { Val, Val, Val, Val }
         cosx = _mm_rcp_ps(cosx);
         return _mm_mul_ps(sinx, cosx);
     }
+
+#ifdef _MSC_VER
+	#pragma warning( pop ) 
+#endif
  
 }
-
-
 
 #endif  // OFX_SIMDFLOATS_MATHFUN_SSE2_H_INCLUDED
