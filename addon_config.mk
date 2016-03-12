@@ -81,7 +81,8 @@ vs:
 
 	
 linuxarmv6l:
-
+	# ofxSIMDFloats is not useful without NEON, this flags are for running it on a raspbian rpi2
+	ADDON_CFLAGS = -mfpu=neon -mfloat-abi=hard -ftree-vectorize
 	
 linuxarmv7l:
 	# enable NEON as is not enabled by default, i'm assuming this is a raspberry Pi / other ARMhf
