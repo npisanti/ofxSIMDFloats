@@ -14,7 +14,7 @@ namespace ofx{
         kernel_SsubB(float s): s(s){};
         
         inline_f  void operator()(float* a, const float* b) const {
-            (*a) += s - (*b);
+            (*a) = s - (*b);
         }
         
         inline_f  void block(float* a, const float* b) const {

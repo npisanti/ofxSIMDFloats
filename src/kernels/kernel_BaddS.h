@@ -14,7 +14,7 @@ namespace ofx{
         kernel_BaddS(float s): s(s){};
         
         inline_f  void operator()(float* a, const float* b) const {
-            (*a) += (*b) + s ;
+            (*a) = (*b) + s ;
         }
         
         inline_f  void block(float* a, const float* b) const {
