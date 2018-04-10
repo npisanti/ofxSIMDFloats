@@ -15,9 +15,15 @@
     #define OFX_SIMD_USE_SSE2
     #define OFX_SIMD_USE_SIMD
     #define OFX_SIMD_ALIGNMENT_NUM 16
-#endif 
- 
-#ifdef __ARM_NEON__
+#endif
+
+#if (__ARM_FEATURE_SIMD32 > 0)
+    #ifndef __ARM_NEON
+        #define __ARM_NEON
+    #endif
+#endif
+
+#if defined(__ARM_NEON__) || defined(__ARM_NEON)
     #define OFX_SIMD_USE_NEON
     #define OFX_SIMD_USE_SIMD
     #define OFX_SIMD_ALIGNMENT_NUM 16

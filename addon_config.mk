@@ -92,8 +92,8 @@ android/armeabi:
 	
 	
 android/armeabi-v7a:	
-	# make shure NEON is enabled
-	ADDON_CFLAGS = -march=armv7-a -mfpu=neon -ftree-vectorize
+	# make sure NEON is enabled
+	ADDON_CFLAGS = -mfpu=neon
 
 osx:
 
