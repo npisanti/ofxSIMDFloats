@@ -2,8 +2,7 @@
 
 #include "allocator.h"
 
-
-
+#include "ofConstants.h"
  
     
 #ifdef OFX_SIMD_USE_SIMD
@@ -16,7 +15,14 @@
                 check = -1;
         }
     #else
-        check = posix_memalign(reinterpret_cast<void**>(&toAllocate), OFX_SIMD_ALIGNMENT_NUM, len*sizeof(float));
+        #ifdef TARGET_WIN32
+            toAllocate = reinterpret_cast<float*>(_aligned_malloc(len*sizeof(float), OFX_SIMD_ALIGNMENT_NUM));
+            if(toAllocate ==NULL) {
+                check = -1;
+            }
+        #elif defined(TARGET_OSX) || defined(TARGET_LINUX)
+            check = posix_memalign(reinterpret_cast<void**>(&toAllocate), OFX_SIMD_ALIGNMENT_NUM, len*sizeof(float));
+        #endif
     #endif
                                 
         if(check!=0){
