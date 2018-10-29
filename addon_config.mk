@@ -75,7 +75,7 @@ linux:
 
 	
 msys2:
-
+        ADDON_CFLAGS = -msse2 -mstackrealign
 	
 vs:
 

@@ -1,16 +1,13 @@
 
 
 #include "allocator.h"
-
-
-
  
     
 #ifdef OFX_SIMD_USE_SIMD
     //-------------------------ALIGNED ALLOCATION------------------------------------------
     void ofx_allocate_aligned(float* &toAllocate, int len){
         int check=0;
-    #ifdef _MSC_VER
+    #if defined(_MSC_VER) || defined(__MINGW32__)
         toAllocate = reinterpret_cast<float*>(_aligned_malloc(len*sizeof(float), OFX_SIMD_ALIGNMENT_NUM));
         if(toAllocate ==NULL) {
                 check = -1;
